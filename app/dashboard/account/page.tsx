@@ -29,8 +29,8 @@ export default function AccountPage() {
           </div>
           <h2 className="text-2xl font-semibold">Coming Soon</h2>
           <p className="text-muted-foreground max-w-md">
-            Account management features are in development. You'll be able to
-            manage your account settings here soon!
+            Account management features are in development. You&apos;ll be able
+            to manage your account settings here soon!
           </p>
         </div>
       </div>

@@ -32,7 +32,7 @@ export default function BillingPage() {
           <h2 className="text-2xl font-semibold">Coming Soon</h2>
           <p className="text-muted-foreground max-w-md">
             Billing and subscription management features are being developed.
-            You'll be able to manage your payments here soon!
+            You&apos;ll be able to manage your payments here soon!
           </p>
         </div>
       </div>

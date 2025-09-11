@@ -29,8 +29,8 @@ export default function UpgradePage() {
           </div>
           <h2 className="text-2xl font-semibold">Coming Soon</h2>
           <p className="text-muted-foreground max-w-md">
-            We're working on bringing you amazing premium features. Stay tuned
-            for updates!
+            We&apos;re working on bringing you amazing premium features. Stay
+            tuned for updates!
           </p>
         </div>
       </div>

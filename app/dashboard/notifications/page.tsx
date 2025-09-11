@@ -29,8 +29,8 @@ export default function NotificationsPage() {
           </div>
           <h2 className="text-2xl font-semibold">Coming Soon</h2>
           <p className="text-muted-foreground max-w-md">
-            Notification management features are in development. You'll be able
-            to customize your notifications here soon!
+            Notification management features are in development. You&apos;ll be
+            able to customize your notifications here soon!
           </p>
         </div>
       </div>

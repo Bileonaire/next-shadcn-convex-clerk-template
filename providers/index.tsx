@@ -3,7 +3,7 @@
 import ConvexClientProvider from "./convex-provider";
 import { ThemeProvider } from "./theme-provider";
 import { Toaster } from "@/components/ui/sonner";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider } from "./clerk-provider";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
