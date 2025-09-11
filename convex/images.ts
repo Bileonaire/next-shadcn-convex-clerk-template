@@ -23,6 +23,17 @@ export const getImageUrl = query({
   },
 });
 
+// Get multiple signed URLs for viewing images (batch operation)
+export const getImageUrls = query({
+  args: { storageIds: v.array(v.id("_storage")) },
+  handler: async (ctx, { storageIds }) => {
+    const urls = await Promise.all(
+      storageIds.map((id) => ctx.storage.getUrl(id))
+    );
+    return urls;
+  },
+});
+
 // Delete an image
 export const deleteImage = mutation({
   args: { storageId: v.id("_storage") },
