@@ -6,7 +6,7 @@ export function useImageUrl(
   storageId: Id<"_storage"> | string | null | undefined
 ) {
   const result = useQuery(
-    api.images.getImageUrl,
+    api.files.getFileUrl,
     storageId ? { storageId: storageId as Id<"_storage"> } : "skip"
   );
 

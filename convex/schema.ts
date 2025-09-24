@@ -14,4 +14,18 @@ export default defineSchema({
   })
     .index("by_user", ["userId"])
     .index("by_email", ["email"]),
+
+  files: defineTable({
+    userId: v.string(), // Clerk user ID
+    name: v.string(), // Original filename
+    size: v.number(), // File size in bytes
+    type: v.string(), // MIME type
+    storageId: v.id("_storage"), // Convex storage ID
+    uploadedAt: v.number(), // Timestamp
+    category: v.optional(v.string()), // File category (image, video, document, etc.)
+    description: v.optional(v.string()), // Optional file description
+  })
+    .index("by_user", ["userId"])
+    .index("by_user_and_category", ["userId", "category"])
+    .index("by_storage_id", ["storageId"]),
 });

@@ -8,6 +8,7 @@ import {
   BarChart3,
   Globe,
   User,
+  Upload,
 } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 
@@ -46,6 +47,11 @@ const data = {
       title: "Profile",
       url: "/dashboard/profile",
       icon: User,
+    },
+    {
+      title: "File Upload",
+      url: "/dashboard/file-upload",
+      icon: Upload,
     },
     {
       title: "Projects",
