@@ -1,5 +1,71 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Quick Start - Clone This Template
+
+To use this template for a new project:
+
+### Option 1: Using GitHub CLI (Recommended)
+```bash
+# Clone the template repository
+gh repo create your-new-project-name --template bileonaire/next-shadcn-convex-clerk-template
+
+# Navigate to your new project
+cd your-new-project-name
+
+# Install dependencies
+npm install
+```
+
+### Option 2: Manual Clone
+```bash
+# Clone this repository
+git clone https://github.com/bileonaire/next-shadcn-convex-clerk-template.git your-new-project-name
+
+# Navigate to your new project
+cd your-new-project-name
+
+# Remove the existing git history and initialize a new repository
+rm -rf .git
+git init
+git add .
+git commit -m "Initial commit from template"
+
+# Add your new remote repository (replace with your actual repo URL)
+git remote add origin https://github.com/yourusername/your-new-project-name.git
+git branch -M main
+git push -u origin main
+
+# Install dependencies
+npm install
+```
+
+### Option 3: Using degit (Clean clone without git history)
+```bash
+# Install degit globally if you haven't already
+npm install -g degit
+
+# Clone the template
+degit bileonaire/next-shadcn-convex-clerk-template your-new-project-name
+
+# Navigate to your new project
+cd your-new-project-name
+
+# Initialize git repository
+git init
+git add .
+git commit -m "Initial commit from template"
+
+# Add your new remote repository
+git remote add origin https://github.com/yourusername/your-new-project-name.git
+git branch -M main
+git push -u origin main
+
+# Install dependencies
+npm install
+```
+
+After cloning, follow the [Environment Setup](#environment-setup) section below to configure your new project.
+
 ## Features
 
 - **Authentication**: Powered by [Clerk](https://clerk.com) for secure user management
