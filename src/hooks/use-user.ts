@@ -13,7 +13,7 @@ export function useUser() {
 
   // Reactive query to get user profile data (automatically updates when data changes)
   const userData = useQuery(api.users.getUserProfile);
-  
+
   // Mutation to create/link profile when needed
   const getProfile = useMutation(api.users.getProfile);
 
