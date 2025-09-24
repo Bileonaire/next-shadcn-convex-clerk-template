@@ -13,7 +13,7 @@ gh repo create your-new-project-name --template bileonaire/next-shadcn-convex-cl
 cd your-new-project-name
 
 # Install dependencies
-npm install
+bun install
 ```
 
 ### Option 2: Manual Clone
@@ -36,7 +36,7 @@ git branch -M main
 git push -u origin main
 
 # Install dependencies
-npm install
+bun install
 ```
 
 After cloning, follow the [Environment Setup](#environment-setup) section below to configure your new project.
@@ -78,24 +78,12 @@ Before you begin, ensure you have the following installed:
 First, install dependencies:
 
 ```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-# or
 bun install
 ```
 
 Then, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
 bun dev
 ```
 
