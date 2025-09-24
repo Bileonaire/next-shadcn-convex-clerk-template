@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
-import { useProfileAuto } from "@/hooks/use-profile-auto";
+import { useUser } from "@/hooks/use-user";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -20,7 +20,7 @@ import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 import { toast } from "sonner";
 import { User, Mail, FileText } from "lucide-react";
-import { useUser } from "@clerk/nextjs";
+import { useUser as useClerkUser } from "@clerk/nextjs";
 import { ImageUpload } from "./image-upload";
 import { useImageUrl } from "@/hooks/use-image-url";
 
@@ -35,9 +35,9 @@ export function ConvexProfile() {
     avatarStorageId: undefined as Id<"_storage"> | undefined,
   });
 
-  const { profile, isLoading, isCreating } = useProfileAuto();
-  const upsertProfile = useMutation(api.profiles.upsertProfile);
-  const { user: clerkUser } = useUser();
+  const { profile, isLoading } = useUser();
+  const upsertProfile = useMutation(api.users.upsertProfile);
+  const { user: clerkUser } = useClerkUser();
 
   // Initialize form data when profile loads - use Clerk data as fallback
   useEffect(() => {
@@ -109,7 +109,7 @@ export function ConvexProfile() {
     setIsEditing(false);
   };
 
-  if (isLoading || isCreating) {
+  if (isLoading) {
     return (
       <div className="space-y-6">
         <Card>

@@ -1,6 +1,5 @@
 "use client";
 
-import { useConvexAuth } from "convex/react";
 import { useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -12,18 +11,17 @@ interface AuthWrapperProps {
 }
 
 export function AuthWrapper({ children, fallback }: AuthWrapperProps) {
-  const { isAuthenticated, isLoading: convexLoading } = useConvexAuth();
-  const { isLoaded: clerkLoaded } = useAuth();
+  const { isSignedIn, isLoaded } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
-    if (clerkLoaded && !convexLoading && !isAuthenticated) {
+    if (isLoaded && !isSignedIn) {
       router.push("/");
     }
-  }, [isAuthenticated, convexLoading, clerkLoaded, router]);
+  }, [isSignedIn, isLoaded, router]);
 
   // Show loading state while checking authentication
-  if (!clerkLoaded || convexLoading) {
+  if (!isLoaded) {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="flex flex-col items-center space-y-4">
@@ -35,7 +33,7 @@ export function AuthWrapper({ children, fallback }: AuthWrapperProps) {
   }
 
   // Show fallback or redirect if not authenticated
-  if (!isAuthenticated) {
+  if (!isSignedIn) {
     if (fallback) {
       return <>{fallback}</>;
     }

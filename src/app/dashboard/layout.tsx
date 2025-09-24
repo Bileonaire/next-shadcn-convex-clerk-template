@@ -2,7 +2,6 @@
 
 import { AppSidebar } from "@/components/sidebar/app-sidebar";
 import { AuthWrapper } from "@/hooks/auth-wrapper";
-import { useProfileAuto } from "@/hooks/use-profile-auto";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -26,9 +25,6 @@ interface DashboardLayoutProps {
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const pathname = usePathname();
-
-  // Automatically ensure user has a profile
-  useProfileAuto();
 
   // Generate breadcrumb based on current path
   const generateBreadcrumb = () => {

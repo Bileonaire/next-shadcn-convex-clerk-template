@@ -13,8 +13,13 @@ const isPublicRoute = createRouteMatcher([
 ]);
 
 export default clerkMiddleware(async (auth, req) => {
+  // Handle protected routes
   if (isProtectedRoute(req)) {
     await auth.protect();
+
+    // For protected routes, we can optionally trigger profile creation
+    // This will be handled by the getUser query in Convex automatically
+    // when components mount, so we don't need to do it here
   }
 
   // Allow public routes without authentication
