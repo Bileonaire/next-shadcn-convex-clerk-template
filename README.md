@@ -39,31 +39,6 @@ git push -u origin main
 npm install
 ```
 
-### Option 3: Using degit (Clean clone without git history)
-```bash
-# Install degit globally if you haven't already
-npm install -g degit
-
-# Clone the template
-degit bileonaire/next-shadcn-convex-clerk-template your-new-project-name
-
-# Navigate to your new project
-cd your-new-project-name
-
-# Initialize git repository
-git init
-git add .
-git commit -m "Initial commit from template"
-
-# Add your new remote repository
-git remote add origin https://github.com/yourusername/your-new-project-name.git
-git branch -M main
-git push -u origin main
-
-# Install dependencies
-npm install
-```
-
 After cloning, follow the [Environment Setup](#environment-setup) section below to configure your new project.
 
 ## Features
